@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test-page</title>
+    <link rel="stylesheet" href="test-styles.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>
+                TEST TIME
+            </h1>
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <input type="text" id="color" placeholder="What is Austin's favorite color" required>
+                <input type="text" id="resteraunt" placeholder="What is Austin's favorite resteraunt" required>
+                <input type="text" id="car" placeholder="What is Austin's favorite dream car" required>
+                <div class="submit">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+    Host : "smtp.gmail.com",
+    Username : "austingmfrancis@gmail.com",
+    Password : "azaleah13",
+    To : 'austingmfrancis@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "Test Results!",
+    Body : "Answer 1" + document.getElementById("color").value
+                + "<br> Answer 2" + document.getElementById("resteraunt").value
+                + "<br> Answer 3" + document.getElementById("car").value
+}).then(
+  message => alert("Thank you, I look forward to reading these!")
+);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,2 +1,4 @@
 # Austins-first-repo
- This is just a place I will save misc stuff, and hopefully learn a thing or two.
+ This is a small test to tell me what my friends truwly know about me 
+
+ If you are reading this, thats pretty cool bc you found my verry first repo!!!!
