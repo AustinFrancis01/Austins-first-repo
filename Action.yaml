@@ -1,0 +1,24 @@
+name: Your Workflow Name
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  your-job-name:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4  # Use v4 or a later version
+      with:
+        node-version: '20'  # Use Node.js version 14 or later
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Tests
+      run: npm test
