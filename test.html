@@ -16,7 +16,7 @@
             <h1>
                 TEST TIME
             </h1>
-            <form onsubmit="sendEmail(); reset(); return false;">
+            <form onsubmit="sendEmail();">
                 <input type="text" id="answer1" placeholder="What is Austin's favorite color" required>
                 <input type="text" id="answer2" placeholder="What is Austin's favorite resteraunt" required>
                 <input type="text" id="answer3" placeholder="What is Austin's favorite dream car" required>
@@ -27,24 +27,29 @@
         </div>
     </div>
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
     <script>
-        function sendEmail(){
-            Email.send({
-    Host : "smtp.gmail.com",
-    Username : "austingmfrancis@gmail.com",
-    Password : "azaleah13",
-    To : 'austingmfrancis@gmail.com',
-    From : document.getElementById("email").value,
-    Subject : "Test Results!",
-    Body : "Answer 1" + document.getElementById("color").value
-                + "<br> Answer 2" + document.getElementById("resteraunt").value
-                + "<br> Answer 3" + document.getElementById("car").value
-}).then(
-  message => alert("Thank you, I look forward to reading these!")
-);
-        }
+ 
+       function sendMail (){
+        (function(){
+            emailjs.init("_kCy1xCT69mPyyC81") //Account Key
+        
+        })();
+        var params = {
+            answer1: document.querySelector("#answer1").value,
+            answer2: document.querySelector("#answer2").value,
+            answer3: document.querySelector("#answer3").value,
+        };
+        var serviceID = "service_vjao83d" // serviceID
+        var templateID = "template_7z8qpq1" // TemplateID
+
+        emailjs.send(serviceID,templateID,params)
+        .then( res=>{
+            alert("Answers have been sent to Austin, Thank you!")
+
+        })
+        .catch
+
     </script>
-    
 </body>
 </html>
