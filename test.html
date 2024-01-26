@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    
 
 </head>
 <body>
@@ -18,8 +18,8 @@
             <h1>
                 TEST TIME
             </h1>
-            <form onsubmit="sendMail();">
-                <input type="text" id="Name" placeholder="Name" required>
+            <form onsubmit="event.preventDefault(); sendMail();">
+                <input type="text" id="name" placeholder="Name" required>
                 <input type="text" id="answer1" placeholder="What is Austin's favorite color" required>
                 <input type="text" id="answer2" placeholder="What is Austin's favorite resteraunt" required>
                 <input type="text" id="answer3" placeholder="How old was Austin when he got married" required>
@@ -34,13 +34,15 @@
 
 
     
-
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        function sendMail() {
-    // Ensure Email.js library is properly loaded
-    (function () {
+(function () {
         emailjs.init("_kCy1xCT69mPyyC81"); // Account Key
     })();
+
+        function sendMail() {
+    // Ensure Email.js library is properly loaded
+    
 
     // Get input values
     var params = {

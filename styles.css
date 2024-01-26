@@ -5,6 +5,14 @@
     
 }
 
+.header{
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
 .container{
     max-width: 100%;
     min-height: 100vh;
@@ -59,4 +67,16 @@ p{
     color: black;
 
 
+}
+
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.footer p{
+    text-align: center;
 }
