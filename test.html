@@ -19,12 +19,15 @@
                 TEST TIME
             </h1>
             <form onsubmit="sendMail();">
+                <input type="text" id="Name" placeholder="Name" required>
                 <input type="text" id="answer1" placeholder="What is Austin's favorite color" required>
                 <input type="text" id="answer2" placeholder="What is Austin's favorite resteraunt" required>
-                <input type="text" id="answer3" placeholder="What is Austin's favorite dream car" required>
+                <input type="text" id="answer3" placeholder="How old was Austin when he got married" required>
+                <input type="text" id="message" placeholder="Leave a message for Austin" required>
                 <div class="submit">
                     <button type="submit">Submit</button>
                 </div>
+               
             </form>
         </div>
     </div>
@@ -41,9 +44,11 @@
 
     // Get input values
     var params = {
+        name: document.querySelector("#name").value,
         answer1: document.querySelector("#answer1").value,
         answer2: document.querySelector("#answer2").value,
         answer3: document.querySelector("#answer3").value,
+        message: document.querySelector("#message").value,
     };
 
     var serviceID = "service_vjao83d"; // Service ID

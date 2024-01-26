@@ -18,14 +18,26 @@
 
 .container .intro {
     text-align: center;
-    min-width: 51%;
+    max-width: 52%;
+    min-width: 52%;
     margin-top: 10%;
+    border: solid;
+    padding: 20px;
+    border-radius: 60px;
+    
+}
+
+p{
+    font-weight: bold;
 }
 
 .container .intro2 {
     text-align: center;
-    min-width: 51%;
+    max-width: 51%;
     /* margin-top: 10%; */
+    border: solid;
+    padding: 20px;
+    border-radius: 60px;
 }
 
 
